@@ -27,6 +27,7 @@ class Server:
             message = conn_socket.recv(1024)
             message_content = (str)(message.decode("utf-8"))
             if message_content == "EXIT":
+                print(f"{conn_socket} disconected")
                 self.all_clients.remove(conn_socket)
                 print(message_content)
                 conn_socket.close()
